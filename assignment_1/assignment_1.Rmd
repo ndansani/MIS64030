@@ -1,0 +1,53 @@
+---
+title: "Assignment_1"
+author: "Nadia Dansani"
+date: "2022-09-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r}
+#Assignment One Fundamentals of Machine Learning
+#import dataset csv file from web 
+cndy<-read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/candy-power-ranking/candy-data.csv",header=TRUE,sep = ",")
+cndy
+class(cndy$sugarpercent)
+#Quantitative Descriptive statistics for candy
+#mean for candy
+mean(cndy$sugarpercent)
+mean(cndy$pricepercent)
+#sd for candy
+sd(cndy$sugarpercent)
+sd(cndy$pricepercent)
+#median for candy
+median(cndy$sugarpercent)
+median(cndy$pricepercent)
+#quantile for candy
+quantile(cndy$sugarpercent)
+quantile(cndy$pricepercent)
+#IQR for candy
+IQR(cndy$sugarpercent)
+IQR(cndy$pricepercent)
+#Summary Descriptive Statistics for Candy
+summary(cndy$sugarpercent)
+summary(cndy$pricepercent)
+#Gettind Dplyr
+library(dplyr)
+#Data Transformation Filter of Fruity Candies
+filter(cndy,fruity=='1')
+#Plot one Quantitative Variable
+plot(cndy$sugarpercent,cndy$pricepercent)
+#ScatterPlot
+plot(cndy$pricepercent,cndy$chocolate)
+
+```
+
+
